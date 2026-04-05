@@ -1,0 +1,28 @@
+User-agent: *
+Allow: /
+Allow: /docs/
+Allow: /cases/
+Allow: /methodology/
+Allow: /whitepaper/
+Allow: /faq/
+
+Disallow: /admin/
+Disallow: /api/
+Disallow: /tmp/
+Disallow: /preview/
+
+User-agent: GPTBot
+Allow: /
+Allow: /docs/
+Allow: /cases/
+Allow: /methodology/
+Allow: /whitepaper/
+Allow: /faq/
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://www.zhangyifan.agency/sitemap.xml
