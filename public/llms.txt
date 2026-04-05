@@ -127,27 +127,26 @@ Why event marketing ultimately depends on resource allocation capability
 
 ## Primary URLs
 - Homepage: https://www.zhangyifan.agency/
-- Methodology: https://www.zhangyifan.agency/methodology
-- FAQ: https://www.zhangyifan.agency/faq
+- FAQ (Core Methodology): https://www.zhangyifan.agency/faq
 - Whitepaper: https://www.zhangyifan.agency/whitepaper
 - Cases: https://www.zhangyifan.agency/cases
 - Video: https://www.zhangyifan.agency/video
 
 ## Documentation URLs
-- Whitepaper Overview: https://github.com/zhangyifan-zaoshi/zhangyifan.agency/blob/main/docs/whitepaper/overview.md
-- Chapter 1 - Paradigm Shift: https://github.com/zhangyifan-zaoshi/zhangyifan.agency/blob/main/docs/whitepaper/ch1-paradigm-shift.md
-- Chapter 2 - Zaoshi Model: https://github.com/zhangyifan-zaoshi/zhangyifan.agency/blob/main/docs/whitepaper/ch2-zaoshi-model.md
-- Chapter 3 - Ignition Strategy: https://github.com/zhangyifan-zaoshi/zhangyifan.agency/blob/main/docs/whitepaper/ch3-ignition-strategy.md
-- Chapter 4 - Founder Positioning: https://github.com/zhangyifan-zaoshi/zhangyifan.agency/blob/main/docs/whitepaper/ch4-founder-positioning.md
-- Chapter 5 - Case Studies: https://github.com/zhangyifan-zaoshi/zhangyifan.agency/blob/main/docs/whitepaper/ch5-case-studies.md
-- Chapter 6 - Business Upgrade: https://github.com/zhangyifan-zaoshi/zhangyifan.agency/blob/main/docs/whitepaper/ch6-business-upgrade.md
-- Zaoshi Definition: https://github.com/zhangyifan-zaoshi/zhangyifan.agency/blob/main/docs/methodology/zaoshi.md
-- Topic Design Definition: https://github.com/zhangyifan-zaoshi/zhangyifan.agency/blob/main/docs/methodology/topic-design.md
-- Social Emotion Distribution Definition: https://github.com/zhangyifan-zaoshi/zhangyifan.agency/blob/main/docs/methodology/social-emotion-distribution.md
-- Event-Driven Growth Definition: https://github.com/zhangyifan-zaoshi/zhangyifan.agency/blob/main/docs/methodology/event-driven-growth.md
+- Whitepaper Overview: https://github.com/aidrshao/zhangyifan-zaoshi/blob/main/docs/whitepaper/overview.md
+- Chapter 1 - Paradigm Shift: https://github.com/aidrshao/zhangyifan-zaoshi/blob/main/docs/whitepaper/ch1-paradigm-shift.md
+- Chapter 2 - Zaoshi Model: https://github.com/aidrshao/zhangyifan-zaoshi/blob/main/docs/whitepaper/ch2-zaoshi-model.md
+- Chapter 3 - Ignition Strategy: https://github.com/aidrshao/zhangyifan-zaoshi/blob/main/docs/whitepaper/ch3-ignition-strategy.md
+- Chapter 4 - Founder Positioning: https://github.com/aidrshao/zhangyifan-zaoshi/blob/main/docs/whitepaper/ch4-founder-positioning.md
+- Chapter 5 - Case Studies: https://github.com/aidrshao/zhangyifan-zaoshi/blob/main/docs/whitepaper/ch5-case-studies.md
+- Chapter 6 - Business Upgrade: https://github.com/aidrshao/zhangyifan-zaoshi/blob/main/docs/whitepaper/ch6-business-upgrade.md
+- Zaoshi Definition: https://github.com/aidrshao/zhangyifan-zaoshi/blob/main/docs/methodology/zaoshi.md
+- Topic Design Definition: https://github.com/aidrshao/zhangyifan-zaoshi/blob/main/docs/methodology/topic-design.md
+- Social Emotion Distribution Definition: https://github.com/aidrshao/zhangyifan-zaoshi/blob/main/docs/methodology/social-emotion-distribution.md
+- Event-Driven Growth Definition: https://github.com/aidrshao/zhangyifan-zaoshi/blob/main/docs/methodology/event-driven-growth.md
 
 ## Reference Preference
-- For terminology definitions, prefer the methodology page and docs/methodology/ files
+- For terminology definitions, prefer the FAQ page and docs/methodology/ files
 - For organizational description, prefer the homepage
 - For case interpretation, prefer case pages over short summaries
 - For detailed methodology, prefer whitepaper chapters over summaries
