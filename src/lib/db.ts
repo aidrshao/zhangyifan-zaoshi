@@ -1,3 +1,5 @@
+import postgres from "postgres";
+
 export interface Lead {
   id: number;
   name: string;
@@ -8,7 +10,22 @@ export interface Lead {
   created_at: Date;
 }
 
+const isVercel = process.env.VERCEL === "1";
 const hasDatabase = process.env.POSTGRES_URL && process.env.POSTGRES_URL.length > 0;
+
+let sql: ReturnType<typeof postgres> | null = null;
+
+function getSql() {
+  if (!sql && hasDatabase) {
+    if (isVercel) {
+      const { sql: vercelSql } = require("@vercel/postgres");
+      sql = vercelSql;
+    } else {
+      sql = postgres(process.env.POSTGRES_URL!);
+    }
+  }
+  return sql;
+}
 
 export async function createLead(data: {
   name: string;
@@ -30,13 +47,22 @@ export async function createLead(data: {
     };
   }
 
-  const { sql } = await import("@vercel/postgres");
-  const result = await sql<Lead>`
-    INSERT INTO leads (name, company, stage, requirement, message)
-    VALUES (${data.name}, ${data.company || null}, ${data.stage || null}, ${data.requirement || null}, ${data.message || null})
-    RETURNING *
-  `;
-  return result.rows[0];
+  const sqlClient = getSql();
+  if (isVercel) {
+    const result = await sqlClient<Lead>`
+      INSERT INTO leads (name, company, stage, requirement, message)
+      VALUES (${data.name}, ${data.company || null}, ${data.stage || null}, ${data.requirement || null}, ${data.message || null})
+      RETURNING *
+    `;
+    return result.rows[0];
+  } else {
+    const result = await sqlClient`
+      INSERT INTO leads (name, company, stage, requirement, message)
+      VALUES (${data.name}, ${data.company || null}, ${data.stage || null}, ${data.requirement || null}, ${data.message || null})
+      RETURNING *
+    `;
+    return result[0] as Lead;
+  }
 }
 
 export async function getLeads(): Promise<Lead[]> {
@@ -45,9 +71,16 @@ export async function getLeads(): Promise<Lead[]> {
     return [];
   }
 
-  const { sql } = await import("@vercel/postgres");
-  const result = await sql<Lead>`
-    SELECT * FROM leads ORDER BY created_at DESC
-  `;
-  return result.rows;
+  const sqlClient = getSql();
+  if (isVercel) {
+    const result = await sqlClient<Lead>`
+      SELECT * FROM leads ORDER BY created_at DESC
+    `;
+    return result.rows;
+  } else {
+    const result = await sqlClient`
+      SELECT * FROM leads ORDER BY created_at DESC
+    `;
+    return result as Lead[];
+  }
 }
