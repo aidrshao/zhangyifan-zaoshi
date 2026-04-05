@@ -14,6 +14,8 @@ export interface Lead {
 const isVercel = process.env.VERCEL === "1";
 const hasDatabase = process.env.POSTGRES_URL && process.env.POSTGRES_URL.length > 0;
 
+// Type definition to accommodate both postgres and vercel/postgres signatures
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 let sql: any = null;
 
 function getSql() {
