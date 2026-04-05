@@ -1,4 +1,5 @@
 import postgres from "postgres";
+import { sql as vercelSql } from "@vercel/postgres";
 
 export interface Lead {
   id: number;
@@ -13,12 +14,11 @@ export interface Lead {
 const isVercel = process.env.VERCEL === "1";
 const hasDatabase = process.env.POSTGRES_URL && process.env.POSTGRES_URL.length > 0;
 
-let sql: ReturnType<typeof postgres> | null = null;
+let sql: any = null;
 
 function getSql() {
   if (!sql && hasDatabase) {
     if (isVercel) {
-      const { sql: vercelSql } = require("@vercel/postgres");
       sql = vercelSql;
     } else {
       sql = postgres(process.env.POSTGRES_URL!);
