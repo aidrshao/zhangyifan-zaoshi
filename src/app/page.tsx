@@ -114,7 +114,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-6">
             <div className="flex flex-col md:flex-row justify-between md:items-end mb-16">
               <div className="mb-8 md:mb-0">
-                <h2 className="text-3xl font-bold mb-4">专业实战课堂</h2>
+                <h2 className="text-3xl font-bold mb-4">宗师课堂</h2>
                 <p className="text-gray-500">听凡哥还原操盘细节，掌握事件背后的人性权重与引爆路径。</p>
               </div>
               <div className="text-left md:text-right">

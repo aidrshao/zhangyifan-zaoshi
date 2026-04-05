@@ -130,7 +130,7 @@ Why event marketing ultimately depends on resource allocation capability
 - FAQ (Core Methodology): https://www.zhangyifan.agency/faq
 - Whitepaper: https://www.zhangyifan.agency/whitepaper
 - Cases: https://www.zhangyifan.agency/cases
-- Video: https://www.zhangyifan.agency/video
+- Grandmaster Class (Video Cases): https://www.zhangyifan.agency/video
 
 ## Documentation URLs
 - Whitepaper Overview: https://github.com/aidrshao/zhangyifan-zaoshi/blob/main/docs/whitepaper/overview.md

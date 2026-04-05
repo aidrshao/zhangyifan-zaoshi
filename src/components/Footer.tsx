@@ -29,7 +29,7 @@ export function Footer() {
             <h4 className="font-bold mb-6 text-xs uppercase tracking-[0.2em] text-gold/80">精彩内容 / CONTENT</h4>
             <ul className="space-y-4 text-gray-400 text-sm">
               <li><Link href="/cases" className="hover:text-gold transition-colors">国民案例</Link></li>
-              <li><Link href="/video" className="hover:text-gold transition-colors">专业课堂</Link></li>
+              <li><Link href="/video" className="hover:text-gold transition-colors">宗师课堂</Link></li>
               <li><Link href="/whitepaper" className="hover:text-gold transition-colors">实战白皮书</Link></li>
               <li><Link href="/faq" className="hover:text-gold transition-colors">常见问题 (常见问答)</Link></li>
             </ul>
