@@ -3,7 +3,26 @@
 import Link from "next/link";
 import { DiagnosticHook } from "./DiagnosticHook";
 
-const chapters = [
+interface Section {
+  id: string;
+  title: string;
+  paragraphs?: string[];
+  list?: string[];
+  paragraphsAfterList?: string[];
+}
+
+interface Chapter {
+  id: string;
+  number: string;
+  title: string;
+  subtitle: string;
+  introParagraphs: string[];
+  sections: Section[];
+  diagnosticQuestion: string;
+  diagnosticHint: string;
+}
+
+const chapters: Chapter[] = [
   {
     id: "ch1",
     number: "01",
