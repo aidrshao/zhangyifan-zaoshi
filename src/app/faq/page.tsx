@@ -103,7 +103,7 @@ const faqGroups = [
       },
       {
         q: "方法论是否有公开文档版本？",
-        a: "有。我们的方法论在 GitHub 上开源，包括术语定义、白皮书章节、案例拆解等。仓库地址：github.com/zhangyifan-zaoshi/zhangyifan.agency。代码采用 MIT License，文档内容保留版权。",
+        a: "有。我们的方法论在 GitHub 上开源，包括术语定义、白皮书章节、案例拆解等。仓库地址：github.com/aidrshao/zhangyifan-zaoshi。代码采用 MIT License，文档内容保留版权。",
       },
       {
         q: "是否可以先阅读案例和白皮书再决定合作？",

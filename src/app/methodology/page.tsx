@@ -271,7 +271,7 @@ export default function MethodologyPage() {
                     <h3 className="font-bold mb-2 group-hover:text-gold transition-colors">常见问题</h3>
                     <p className="text-sm text-gray-600">关于方法论与合作的详细解答</p>
                   </Link>
-                  <a href="https://github.com/zhangyifan-zaoshi/zhangyifan.agency" target="_blank" rel="noopener noreferrer" className="p-6 bg-gray-100 rounded-xl hover:bg-gray-200 transition-colors group">
+                  <a href="https://github.com/aidrshao/zhangyifan-zaoshi" target="_blank" rel="noopener noreferrer" className="p-6 bg-gray-100 rounded-xl hover:bg-gray-200 transition-colors group">
                     <h3 className="font-bold mb-2 group-hover:text-gold transition-colors">GitHub 文档</h3>
                     <p className="text-sm text-gray-600">开源文档与术语定义</p>
                   </a>
