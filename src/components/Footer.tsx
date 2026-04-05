@@ -31,7 +31,7 @@ export function Footer() {
               <li><Link href="/cases" className="hover:text-gold transition-colors">国民案例</Link></li>
               <li><Link href="/video" className="hover:text-gold transition-colors">专业课堂</Link></li>
               <li><Link href="/whitepaper" className="hover:text-gold transition-colors">实战白皮书</Link></li>
-              <li><Link href="/methodology" className="hover:text-gold transition-colors">实测方法论</Link></li>
+              <li><Link href="/faq" className="hover:text-gold transition-colors">常见问题 (常见问答)</Link></li>
             </ul>
           </div>
         </div>

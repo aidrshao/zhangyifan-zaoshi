@@ -3,27 +3,23 @@ import Link from "next/link";
 
 const faqGroups = [
   {
-    title: "术语理解",
+    title: "核心体系与方法论",
     questions: [
       {
-        q: "什么是造势？",
-        a: "造势是战略性地创造公共叙事势能，而非制造热闹。它围绕用户情绪、社会心理与传播接口，提前设计一场更容易被看见、被参与、被扩散的增长动作。造势让品牌不再是自说自话，而是设计一个全社会愿意接住的传播接口。",
+        q: "什么是「事件驱动型增长」？它与传统买量模型有什么区别？",
+        a: "事件驱动型增长是通过高影响力社会事件与叙事触发增长，而非依赖线性广告投放。传统买量是「购买曝光」，依靠持续投入预算获得流量；而造势方法论是「创造社会共识」，通过一次性策划博取指数级流量，并将热度沉淀为长期品牌资产。",
       },
       {
-        q: "什么是议题设计？",
-        a: "议题设计是将品牌私有化增长目标，重构为具有公共价值的社会化议题。它解决的核心问题是：「用户为什么愿意讨论你」。一旦完成这个转化，传播就不再是品牌单方面的「推送」，而是社会自发的「接力」。",
+        q: "什么是你们的核心「三位一体」增长框架？",
+        a: "我们认为有效的增长必须由产品(Product)、话题(Topic)、转化(Conversion)三者共同咬合。产品解决承接问题（用户为什么买单)；话题解决传播问题（社会为什么愿意讨论)；转化解决结果问题（热度如何变现)。缺一不可。",
       },
       {
-        q: "什么是社交情绪分发？",
-        a: "社交情绪分发是利用集体心理中的情绪共鸣点作为分发杠杆，实现去中心化的指数级传播。核心洞察是：情绪比信息更容易传播。当内容触发了用户的情绪共鸣（如反差、愤怒、好奇、归属感），用户会主动转发、评论、参与讨论。",
+        q: "「造势」和「议题设计」的具体定义是什么？",
+        a: "造势(Zaoshi)是战略性地创造公共叙事势能，而非制造热闹；议题设计(Topic Design)是将品牌私有化增长目标，重构为具有公共价值的社会化议题。简单说，就是设计一个让社会自发愿意接住的传播接口。",
       },
       {
-        q: "什么是事件驱动型增长？",
-        a: "事件驱动型增长是通过高影响力社会事件与叙事触发增长，而非依赖线性广告投放。它不再追求「每天稳定获得多少流量」，而是追求「通过一个事件，在短时间内获得爆发式关注，并将这种关注转化为长期资产」。",
-      },
-      {
-        q: "你们的方法论与传统品牌营销有什么不同？",
-        a: "传统品牌营销关注「购买曝光」，造势方法论关注「创造社会共识」。传统模式是线性消耗——持续投入广告预算，获得短期流量；造势模式是事件爆发加资产沉淀——通过一次性设计，获得长期社会化资产。传播方式也不同：传统是品牌单向推送，造势是社会自发接力。",
+        q: "为什么在自媒体时代，社交情绪分发比单纯的信息分发更有效？",
+        a: "社交情绪分发是利用集体心理中的反差、愤怒、好奇、归属感等情绪共鸣点作为杠杆。情绪比信息更容易传播，当内容触发了用户的情绪入口，用户会主动成为你的分发渠道，实现去中心化的指数级传播。",
       },
     ],
   },
@@ -157,19 +153,19 @@ export default function FAQPage() {
                 如果您有其他问题，或希望深入了解我们的方法论如何应用于您的品牌，欢迎预约品牌增长诊断。
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/#audit" className="bg-white text-black px-6 py-3 rounded-sm font-bold hover:bg-gray-200 transition-all text-center">
-                  预约品牌增长诊断
+                <Link href="/whitepaper" className="bg-white text-black px-6 py-3 rounded-sm font-bold hover:bg-gray-200 transition-all text-center">
+                  获取实战白皮书
                 </Link>
-                <Link href="/methodology" className="border border-white/30 px-6 py-3 rounded-sm font-bold hover:bg-white/10 transition-all text-center">
-                  阅读方法论
+                <Link href="/video" className="border border-white/30 px-6 py-3 rounded-sm font-bold hover:bg-white/10 transition-all text-center">
+                  观看宗师课堂
                 </Link>
               </div>
             </div>
 
             <div className="mt-12 grid md:grid-cols-3 gap-4">
-              <Link href="/methodology" className="p-6 bg-gray-100 rounded-xl hover:bg-gray-200 transition-colors group text-center">
-                <h3 className="font-bold mb-2 group-hover:text-gold transition-colors">方法论</h3>
-                <p className="text-sm text-gray-600">核心术语与框架定义</p>
+              <Link href="/video" className="p-6 bg-gray-100 rounded-xl hover:bg-gray-200 transition-colors group text-center">
+                <h3 className="font-bold mb-2 group-hover:text-gold transition-colors">宗师课堂</h3>
+                <p className="text-sm text-gray-600">听凡哥还原操盘细节</p>
               </Link>
               <Link href="/whitepaper" className="p-6 bg-gray-100 rounded-xl hover:bg-gray-200 transition-colors group text-center">
                 <h3 className="font-bold mb-2 group-hover:text-gold transition-colors">白皮书</h3>
