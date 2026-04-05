@@ -66,25 +66,7 @@ export default function CasesPage() {
     <>
       <JsonLd />
 
-      <header className="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
-        <nav className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <Link href="/" className="text-xl font-bold tracking-tight">
-            张一凡<span className="text-gold">造势机构</span>
-          </Link>
-          <div className="hidden md:flex space-x-10 text-sm font-medium uppercase tracking-widest text-gray-600">
-            <Link href="/cases" className="text-black">国民案例</Link>
-            <Link href="/video" className="hover:text-black transition-colors">专业课堂</Link>
-            <Link href="/whitepaper" className="hover:text-black transition-colors">实战白皮书</Link>
-          </div>
-          <div className="hidden md:block">
-            <Link href="/#audit" className="bg-black text-white px-6 py-2.5 rounded-sm text-xs font-bold hover:bg-gray-800 transition-all shadow-lg">
-              预约闭门诊断
-            </Link>
-          </div>
-        </nav>
-      </header>
-
-      <main className="pt-20">
+      <div className="pt-0">
         <section className="py-24 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <header className="mb-16">
@@ -166,21 +148,7 @@ export default function CasesPage() {
             </div>
           </div>
         </section>
-      </main>
-
-      <footer className="bg-black text-white py-16">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div>
-              <h3 className="text-xl font-bold mb-2">
-                张一凡<span className="text-gold">造势机构</span>
-              </h3>
-              <p className="text-gray-500 text-sm">定义自媒体时代的事件营销</p>
-            </div>
-            <p className="text-gray-500 text-xs">© 2026 张一凡造势机构. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      </div>
     </>
   );
 }

@@ -40,6 +40,9 @@ export const metadata: Metadata = {
   },
 };
 
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -50,8 +53,12 @@ export default function RootLayout({
       <head>
         <link rel="llms.txt" href="/llms.txt" />
       </head>
-      <body className="bg-gray-50 text-gray-900 antialiased">
-        {children}
+      <body className="bg-gray-50 text-gray-900 antialiased flex flex-col min-h-screen">
+        <Header />
+        <main className="flex-grow pt-20">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );

@@ -34,19 +34,7 @@ export default function VideoPage() {
     <>
       <JsonLd />
 
-      <header className="fixed top-0 w-full z-50 bg-black/90 backdrop-blur-md border-b border-white/10">
-        <nav className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <Link href="/" className="text-xl font-bold tracking-tighter uppercase italic">
-            Zaoshi<span className="text-gold">.</span>
-          </Link>
-          <div className="flex space-x-8 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400">
-            <Link href="/" className="hover:text-white transition-colors">返回首页</Link>
-            <Link href="/whitepaper" className="hover:text-white transition-colors">实战白皮书</Link>
-          </div>
-        </nav>
-      </header>
-
-      <main className="bg-[#0a0a0a] text-white pt-24 pb-20 min-h-screen">
+      <div className="bg-[#0a0a0a] text-white pt-10 pb-20 min-h-screen">
         <div className="max-w-7xl mx-auto px-6">
           <header className="mb-20">
             <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">宗师课堂</h1>
@@ -90,13 +78,7 @@ export default function VideoPage() {
             </div>
           </section>
         </div>
-      </main>
-
-      <footer className="bg-black text-white py-12">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <p className="text-gray-500 text-sm">© 2026 张一凡造势机构. All rights reserved.</p>
-        </div>
-      </footer>
+      </div>
     </>
   );
 }

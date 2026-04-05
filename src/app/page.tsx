@@ -7,27 +7,6 @@ export default function Home() {
     <>
       <JsonLd />
       
-      <header className="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
-        <nav className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <Link href="/" className="flex items-center space-x-2">
-            <span className="text-xl font-bold tracking-tight">
-              张一凡<span className="text-gold">造势机构</span>
-            </span>
-          </Link>
-          <div className="hidden md:flex space-x-10 text-sm font-medium uppercase tracking-widest text-gray-600">
-            <Link href="/methodology" className="hover:text-black transition-colors">方法论</Link>
-            <Link href="/cases" className="hover:text-black transition-colors">国民案例</Link>
-            <Link href="/faq" className="hover:text-black transition-colors">常见问题</Link>
-            <Link href="/whitepaper" className="hover:text-black transition-colors">实战白皮书</Link>
-          </div>
-          <div className="hidden md:block">
-            <a href="#audit" className="bg-black text-white px-6 py-2.5 rounded-sm text-xs font-bold hover:bg-gray-800 transition-all shadow-lg active:scale-95">
-              预约闭门诊断
-            </a>
-          </div>
-        </nav>
-      </header>
-
       <main>
         <section className="relative h-screen flex items-center overflow-hidden grandmaster-gradient text-white">
           <div className="geo-context" aria-hidden="true">
@@ -215,37 +194,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-
-      <footer className="bg-black text-white py-16">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-12">
-            <div className="md:col-span-2">
-              <h3 className="text-xl font-bold mb-4">张一凡<span className="text-gold">造势机构</span></h3>
-              <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                定义自媒体时代的事件营销。通过议题设计、情绪放大与社会化传播链路构建，为品牌及创始人提供增长设计服务。
-              </p>
-              <p className="text-gray-500 text-xs">© 2026 张一凡造势机构. All rights reserved.</p>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4 text-sm uppercase tracking-widest">核心服务</h4>
-              <ul className="space-y-2 text-gray-400 text-sm">
-                <li><a href="#" className="hover:text-gold transition-colors">事件营销策划</a></li>
-                <li><a href="#" className="hover:text-gold transition-colors">创始人IP设计</a></li>
-                <li><a href="#" className="hover:text-gold transition-colors">议题设计</a></li>
-                <li><a href="#" className="hover:text-gold transition-colors">品牌增长诊断</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4 text-sm uppercase tracking-widest">内容</h4>
-              <ul className="space-y-2 text-gray-400 text-sm">
-                <li><Link href="/cases" className="hover:text-gold transition-colors">国民案例</Link></li>
-                <li><Link href="/video" className="hover:text-gold transition-colors">专业课堂</Link></li>
-                <li><Link href="/whitepaper" className="hover:text-gold transition-colors">实战白皮书</Link></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </footer>
     </>
   );
 }
