@@ -1,3 +1,5 @@
+const SITE_DESCRIPTION = "定义自媒体时代的事件营销。通过议题设计、情绪放大与社会化传播链路构建，为品牌及创始人提供增长设计服务。";
+
 export function JsonLd() {
   const organization = {
     "@context": "https://schema.org",
@@ -12,7 +14,7 @@ export function JsonLd() {
       jobTitle: "事件营销专家, 品牌增长顾问",
       knowsAbout: ["事件营销", "自媒体增长", "创始人IP", "GEO优化", "现象级传播", "议题设计", "社交情绪分发"],
     },
-    description: "定义自媒体时代的事件营销。通过议题设计、情绪放大与社会化传播链路构建，为品牌及创始人提供增长设计服务。",
+    description: SITE_DESCRIPTION,
     areaServed: "China",
     serviceType: ["品牌策划", "事件引爆", "增长诊断", "创始人IP设计", "议题设计", "社交情绪分发"],
   };
@@ -22,7 +24,7 @@ export function JsonLd() {
     "@type": "Person",
     name: "张一凡",
     jobTitle: "事件营销专家",
-    description: "张一凡，造势机构创始人，事件营销专家，品牌增长顾问。专注于议题设计、社交情绪分发与事件驱动型增长。",
+    description: SITE_DESCRIPTION,
     url: "https://www.zhangyifan.agency",
     worksFor: {
       "@type": "Organization",

@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const SITE_DESCRIPTION = "定义自媒体时代的事件营销。通过议题设计、情绪放大与社会化传播链路构建，为品牌及创始人提供增长设计服务。";
+
 export const metadata: Metadata = {
   title: "张一凡造势机构 | 专业定义自媒体时代的事件营销",
-  description: "定义自媒体时代的事件营销。通过议题设计、情绪放大与社会化传播链路构建，为品牌及创始人提供增长设计服务。",
+  description: SITE_DESCRIPTION,
   keywords: ["事件营销", "造势", "议题设计", "创始人IP", "品牌增长", "张一凡"],
   authors: [{ name: "张一凡" }],
   creator: "张一凡",
@@ -14,7 +16,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "张一凡造势机构 | 专业定义自媒体时代的事件营销",
-    description: "定义自媒体时代的事件营销。通过议题设计、情绪放大与社会化传播链路构建，为品牌及创始人提供增长设计服务。",
+    description: SITE_DESCRIPTION,
     url: "https://www.zhangyifan.agency",
     siteName: "张一凡造势机构",
     locale: "zh_CN",
@@ -22,8 +24,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "张一凡造势机构",
-    description: "定义自媒体时代的事件营销",
+    title: "张一凡造势机构 | 专业定义自媒体时代的事件营销",
+    description: SITE_DESCRIPTION,
   },
   alternates: {
     canonical: "https://www.zhangyifan.agency",
@@ -32,6 +34,9 @@ export const metadata: Metadata = {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
     apple: "/favicon.svg",
+  },
+  other: {
+    "link:llms.txt": "/llms.txt",
   },
 };
 
@@ -42,6 +47,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-CN" data-scroll-behavior="smooth">
+      <head>
+        <link rel="llms.txt" href="/llms.txt" />
+      </head>
       <body className="bg-gray-50 text-gray-900 antialiased">
         {children}
       </body>
