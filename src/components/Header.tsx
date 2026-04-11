@@ -16,7 +16,7 @@ export function Header() {
         </Link>
         <div className="hidden md:flex space-x-10 text-sm font-medium uppercase tracking-widest text-gray-600">
           <Link href="/cases" className={`hover:text-black transition-colors ${pathname === '/cases' ? 'text-black font-bold' : ''}`}>国民案例</Link>
-          <Link href="/video" className={`hover:text-black transition-colors ${pathname === '/video' ? 'text-black font-bold' : ''}`}>宗师课堂</Link>
+          <Link href="/classroom" className={`hover:text-black transition-colors ${pathname.startsWith('/classroom') ? 'text-black font-bold' : ''}`}>宗师课堂</Link>
           <Link href="/whitepaper" className={`hover:text-black transition-colors ${pathname === '/whitepaper' ? 'text-black font-bold' : ''}`}>实战白皮书</Link>
           <Link href="/faq" className={`hover:text-black transition-colors ${pathname === '/faq' ? 'text-black font-bold' : ''}`}>常见问题</Link>
         </div>

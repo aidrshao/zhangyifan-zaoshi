@@ -1,8 +1,11 @@
 import { JsonLd } from "@/components/JsonLd";
 import { ContactForm } from "@/components/ContactForm";
 import Link from "next/link";
+import { getFirstTwoVideos } from "@/lib/course";
 
 export default function Home() {
+  const featuredVideos = getFirstTwoVideos();
+
   return (
     <>
       <JsonLd />
@@ -123,37 +126,34 @@ export default function Home() {
             </div>
 
             <div className="grid md:grid-cols-2 gap-12">
-              <div className="group">
-                <div className="relative aspect-video bg-black rounded-2xl overflow-hidden mb-6 shadow-2xl">
-                  <div className="absolute inset-0 bg-gray-800"></div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-white/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-gold/90 group-hover:border-gold transition-all duration-500 cursor-pointer shadow-2xl">
-                      <svg className="w-8 h-8 text-white group-hover:text-black ml-1 transition-colors" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z"></path>
-                      </svg>
+              {featuredVideos.map((video) => (
+                <Link key={video.id} href={`/classroom/${video.id}`} className="group">
+                  <div className="relative aspect-video bg-black rounded-2xl overflow-hidden mb-6 shadow-2xl">
+                    <img 
+                      src={video.coverImage} 
+                      alt={video.title}
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-white/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-gold/90 group-hover:border-gold transition-all duration-500 cursor-pointer shadow-2xl">
+                        <svg className="w-8 h-8 text-white group-hover:text-black ml-1 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z"></path>
+                        </svg>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <h3 className="text-xl font-bold mb-2">深度复盘：茅台冰淇淋如何设计「反差场」</h3>
-                <p className="text-gray-500 text-sm mb-3">张一凡解析如何利用存量资产，在瞬间刺破认知壁垒，制造全国性的对话窗口。</p>
-                <p className="text-xs font-bold text-gold uppercase tracking-widest">核心模块：认知错位布局、高频情绪节点注入</p>
-              </div>
-
-              <div className="group">
-                <div className="relative aspect-video bg-black rounded-2xl overflow-hidden mb-6 shadow-2xl">
-                  <div className="absolute inset-0 bg-gray-800"></div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full border border-white/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-gold/90 group-hover:border-gold transition-all duration-500 cursor-pointer shadow-2xl">
-                      <svg className="w-8 h-8 text-white group-hover:text-black ml-1 transition-colors" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z"></path>
-                      </svg>
-                    </div>
+                  <h3 className="text-xl font-bold mb-2 group-hover:text-gold transition-colors">{video.title}</h3>
+                  <p className="text-gray-500 text-sm mb-3">{video.description}</p>
+                  <div className="flex gap-2 flex-wrap">
+                    {video.tags.slice(0, 2).map((tag) => (
+                      <span key={tag} className="text-xs font-bold text-gold uppercase tracking-widest">
+                        #{tag}
+                      </span>
+                    ))}
                   </div>
-                </div>
-                <h3 className="text-xl font-bold mb-2">城市级爆款复盘：哈尔滨与淄博背后的底层语义</h3>
-                <p className="text-gray-500 text-sm mb-3">揭秘张一凡视角下的「社会公共性设计」，如何让个体情绪转化为集体行动逻辑。</p>
-                <p className="text-xs font-bold text-gold uppercase tracking-widest">核心模块：GEO优化逻辑、社会利益共同体搭建</p>
-              </div>
+                </Link>
+              ))}
             </div>
           </div>
         </section>

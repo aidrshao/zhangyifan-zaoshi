@@ -1,0 +1,60 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: zhangyifan-app
+    restart: always
+    ports:
+      - "3007:3000"
+    environment:
+      - NODE_ENV=production
+      - POSTGRES_URL=postgres://postgres:${POSTGRES_PASSWORD:-zhangyifan2024}@db:5432/${POSTGRES_DATABASE:-zhangyifan}
+      - POSTGRES_PRISMA_URL=postgres://postgres:${POSTGRES_PASSWORD:-zhangyifan2024}@db:5432/${POSTGRES_DATABASE:-zhangyifan}?pgbouncer=true
+      - POSTGRES_URL_NON_POOLING=postgres://postgres:${POSTGRES_PASSWORD:-zhangyifan2024}@db:5432/${POSTGRES_DATABASE:-zhangyifan}
+      - POSTGRES_USER=postgres
+      - POSTGRES_HOST=db
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-zhangyifan2024}
+      - POSTGRES_DATABASE=${POSTGRES_DATABASE:-zhangyifan}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD:-zhangyifan2024}
+    volumes:
+      - ./data/course.json:/app/data/course.json
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - zhangyifan-network
+    healthcheck:
+      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:3000/api/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  db:
+    image: postgres:15-alpine
+    container_name: zhangyifan-db
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-zhangyifan2024}
+      - POSTGRES_DB=${POSTGRES_DATABASE:-zhangyifan}
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./src/lib/schema.sql:/docker-entrypoint-initdb.d/schema.sql:ro
+    networks:
+      - zhangyifan-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d ${POSTGRES_DATABASE:-zhangyifan}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+networks:
+  zhangyifan-network:
+    driver: bridge
+
+volumes:
+  postgres-data:
