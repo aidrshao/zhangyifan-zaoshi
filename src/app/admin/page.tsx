@@ -63,13 +63,12 @@ export default function AdminPage() {
       });
 
       if (res.ok) {
-        alert('保存成功');
         fetchCourses();
         setEditingVideo(null);
         setIsAddingVideo(false);
       } else {
         const errorData = await res.json();
-        alert(`保存失败: ${errorData.error || res.statusText}`);
+        console.error(`保存失败: ${errorData.error || res.statusText}`);
       }
     } catch (error) {
       console.error('保存视频失败:', error);
@@ -300,16 +299,27 @@ function VideoEditModal({
   video: Video; 
   courseId: string;
   isNew: boolean;
-  onSave: (video: Video, courseId: string) => void;
+  onSave: (video: Video, courseId: string) => Promise<void>;
   onClose: () => void;
 }) {
   const [form, setForm] = useState(video);
-
-  const handleSubmit = (e: React.FormEvent | React.MouseEvent) => {
+  const [isSaving, setIsSaving] = useState(false);
+  const [isSaved, setIsSaved] = useState(false);
+ 
+  const handleSubmit = async (e: React.FormEvent | React.MouseEvent) => {
     e.preventDefault();
-    console.log('handleSubmit 被触发了');
-    window.alert('触发了保存逻辑');
-    onSave(form, courseId);
+    if (isSaving || isSaved) return;
+
+    setIsSaving(true);
+    try {
+      await onSave(form, courseId);
+      setIsSaved(true);
+      // 给用户 800ms 看到“已保存”状态，然后由父组件关闭 Modal
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsSaving(false);
+    }
   };
 
   return (
@@ -428,9 +438,14 @@ function VideoEditModal({
             <button
               type="button"
               onClick={handleSubmit}
-              className="flex-1 py-2 bg-gold text-black font-bold rounded-lg hover:bg-gold/90 transition-colors"
+              disabled={isSaving || isSaved}
+              className={`flex-1 py-2 font-bold rounded-lg transition-all duration-200 ${
+                isSaved 
+                  ? 'bg-green-500 text-white' 
+                  : 'bg-gold text-black hover:bg-gold/90'
+              } ${(isSaving || isSaved) ? 'opacity-70 cursor-not-allowed' : ''}`}
             >
-              保存
+              {isSaving ? '保存中...' : isSaved ? '已保存 ✓' : '保存'}
             </button>
             <button
               type="button"
